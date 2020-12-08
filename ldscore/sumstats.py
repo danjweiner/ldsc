@@ -372,7 +372,9 @@ def estimate_h2(args, log):
         df_results = hsqhat._overlap_output(ref_ld_cnames, overlap_matrix, M_annot, M_tot, args.print_coefficients)
         df_results.to_csv(args.out+'.results', sep="\t", index=False)
         log.log('Results printed to '+args.out+'.results')
-
+    
+    pd.DataFrame(np.linalg.lstsq(ref_ld, chisq)[1]).to_csv(args.out+'.sse', sep="\t", index=False, header = False)
+        
     return hsqhat
 
 
