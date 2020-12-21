@@ -378,6 +378,7 @@ def estimate_h2(args, log):
     pd.DataFrame(ref_ld).to_csv(args.out+'.design', sep="\t", index=False, header = False, compression = 'gzip')
     #pd.DataFrame(s(sumstats[w_ld_cname])).to_csv(args.out+'.weights', sep="\t", index=False, header = False)
     pd.DataFrame([n_snp]).to_csv(args.out+'.nsnp', sep="\t", index=False, header = False)
+    pd.DataFrame(sumstats.SNP).to_csv(args.out+'.snps', sep="\t", index=False, header = False)
    
     return hsqhat
 
